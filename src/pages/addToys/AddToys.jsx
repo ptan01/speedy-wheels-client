@@ -1,5 +1,8 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
+import Swal from 'sweetalert2'
+
+
 
 const AddToys = () => {
 
@@ -31,6 +34,14 @@ const AddToys = () => {
         })
             .then(res => res.json())
             .then(data => {
+                if (data.acknowledged) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your Toy Added Success Fully',
+                        icon: 'success',
+                        confirmButtonText: 'Done'
+                    })
+                }
                 console.log(data)
             })
 
@@ -59,12 +70,12 @@ const AddToys = () => {
                         <input className='border-b-4 border-b-slate-600 px-5 py-1' type="text" name="sellerName" defaultValue={user?.displayName} id="" placeholder='seller name' required />
                     </div>
                     <div>
-                    <label className='text-2xl' htmlFor="name">Sub Category:</label><br />
-                    <select name='category' className="select select-bordered w-full max-w-xs">
-                        <option>Off-Road Vehicles</option>
-                        <option>Electric Vehicles</option>
-                        <option>Sports Cars</option>
-                    </select>
+                        <label className='text-2xl' htmlFor="name">Sub Category:</label><br />
+                        <select name='category' className="select select-bordered w-full max-w-xs">
+                            <option>Off-Road Vehicles</option>
+                            <option>Electric Vehicles</option>
+                            <option>Sports Cars</option>
+                        </select>
                     </div>
                     <div>
                         <label className='text-2xl' htmlFor="name">Price:</label><br />
