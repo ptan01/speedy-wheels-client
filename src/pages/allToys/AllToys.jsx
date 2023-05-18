@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const AllToys = () => {
 
-    const toys = useLoaderData()
-    console.log(toys)
+    // const toys = useLoaderData()
+   const [toys , setToys] = useState(useLoaderData())
+
+    const handleSearch = (event)=> {
+        event.preventDefault()
+        const text = event.target.text.value
+        fetch(`http://localhost:5000/toys/${text}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            setToys(data)
+        })
+    }
 
     return (
         <div>
-            <h1>this is all toyes page</h1>
+            <form onSubmit={handleSearch}>
+                <input type="text" name='text' placeholder='search with toy name' className='border' />
+                <input type="submit" value="Search" />
+            </form>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* head */}
