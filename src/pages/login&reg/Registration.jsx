@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 
 const Registration = () => {
 
+    const {createUser} = useContext(AuthContext)
 
     const handleRegister = (e)=> {
         e.preventDefault()
@@ -10,6 +14,22 @@ const Registration = () => {
         const pass = e.target.password.value ;
         const photo = e.target.photo.value ;
         console.log(name, email, pass, photo)
+
+        createUser(email, pass)
+        .then(result => {
+            const user = result.user ;
+            updateProfile(user, {displayName: name , photoURL : photo})
+            .then(()=> {
+
+            })
+            .catch(err=> {
+                console.log(err.message)
+            })
+            console.log(user)
+        })
+        .catch(err => {
+            console.log(err.message)
+        })
     }
 
 
@@ -37,9 +57,10 @@ const Registration = () => {
                     </div>
                 </div>
                 <div className='text-center mt-5'>
-                    <input className='btn text-blue-500' type="submit" value="Login" />
+                    <input className='btn text-blue-500' type="submit" value="Register" />
                 </div>
             </form>
+            <p className='text-center'>Already Have An Account ? <Link className='text-blue-500' to='/login'>Login</Link></p>
         </div>
     );
 };
