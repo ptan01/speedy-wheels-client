@@ -4,6 +4,7 @@ import Gallery from '../gallery/Gallery';
 import ShopCategory from '../shopCategory/ShopCategory';
 
 const Home = () => {
+    
     return (
         <div>
             <Header></Header>
