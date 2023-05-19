@@ -37,8 +37,8 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li><NavLink className={({isActive})=> isActive ? 'text-blue-500' : ""} to='/'>Home</NavLink></li>
                     <li><NavLink className={({isActive})=> isActive ? 'text-blue-500' : ""} to='/all-toys'>All Toys</NavLink></li>
-                    <li><NavLink className={({isActive})=> isActive ? 'text-blue-500' : ""} to='/my-toys'>My Toys</NavLink></li>
-                    <li><NavLink className={({isActive})=> isActive ? 'text-blue-500' : ""} to='/add-toys'>Add A Toys</NavLink></li>
+                    <li className={user ? "" : "hidden"}><NavLink className={({isActive})=> isActive ? 'text-blue-500' : ""} to='/my-toys'>My Toys</NavLink></li>
+                    <li className={user ? "" : "hidden"}><NavLink className={({isActive})=> isActive ? 'text-blue-500' : ""} to='/add-toys'>Add A Toys</NavLink></li>
                     <li><NavLink className={({isActive})=> isActive ? 'text-blue-500' : ""} to='/blogs'>Blogs</NavLink></li>
                 </ul>
             </div>
