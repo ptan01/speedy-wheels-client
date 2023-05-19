@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { json } from 'react-router-dom';
+import { Link, json } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -49,7 +49,7 @@ const ShopCategory = () => {
                                     <p className='text-xl'>Price: ${ofRoad.price}</p>
                                     <p className='text-xl'>Rating: {ofRoad.rating}</p>
                                     <div className="card-actions justify-end">
-                                        <button className="btn btn-primary">Details</button>
+                                    <Link to={`/details/${ofRoad._id}`} className='btn'>Details</Link>
                                     </div>
                                 </div>
                             </div>)
@@ -68,7 +68,7 @@ const ShopCategory = () => {
                                     <p className='text-xl'>Price: ${electric.price}</p>
                                     <p className='text-xl'>Rating: {electric.rating}</p>
                                     <div className="card-actions justify-end">
-                                        <button className="btn btn-primary">Details</button>
+                                    <Link to={`/details/${electric._id}`} className='btn'>Details</Link>
                                     </div>
                                 </div>
                             </div>)
@@ -85,7 +85,7 @@ const ShopCategory = () => {
                                     <p className='text-xl'>Price: ${sport.price}</p>
                                     <p className='text-xl'>Rating: {sport.rating}</p>
                                     <div className="card-actions justify-end">
-                                        <button className="btn btn-primary">Details</button>
+                                    <Link to={`/details/${sport._id}`} className='btn'>Details</Link>
                                     </div>
                                 </div>
                             </div>)
