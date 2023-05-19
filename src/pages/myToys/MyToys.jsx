@@ -55,7 +55,7 @@ const MyToys = () => {
     }
 
     return (
-        <div>
+        <div className='min-h-[80vh]'>
             <table className="table w-full">
                 {/* head */}
                 <thead>

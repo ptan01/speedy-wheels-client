@@ -4,7 +4,7 @@ const Gallery = () => {
     return (
       <div className='mt-10'>
         <div className='my-10'>
-        <h2 className='text-center text-4xl'>Here is some collection of Car</h2>
+        <h2 className='text-center text-4xl text-blue-600'>collection of Car</h2>
         <p className='text-center'>Our gallery not only showcases the beauty of these miniature automobiles but also aims to inspire curiosity and <br /> ignite a love for cars. With every click, you embark on a journey of exploration and nostalgia, <br /> recalling fond memories of childhood play or sparking <br /> a newfound interest in the world of cars.</p>
         </div>
           <div className='grid lg:grid-cols-3 gap-3 my-10'>
