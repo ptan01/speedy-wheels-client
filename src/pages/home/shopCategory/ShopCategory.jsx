@@ -42,7 +42,7 @@ const ShopCategory = () => {
 
                     <div className='grid lg:grid-cols-3 gap-4 mt-16'>
                         {
-                            ofRoads.map(ofRoad => <div key={ofRoad._id} className="card card-compact w-96 h-96 bg-base-100 shadow-xl">
+                            ofRoads.map(ofRoad => <div key={ofRoad._id} className="card card-compact max-w-96 h-96 bg-base-100 shadow-xl">
                                 <figure><img className='h-[300px] w-[500px]' src={ofRoad.photo} alt="Shoes" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title text-blue-500">{ofRoad.name}</h2>
@@ -61,7 +61,7 @@ const ShopCategory = () => {
                 <TabPanel>
                 <div className='grid lg:grid-cols-3 gap-4 mt-16'>
                         {
-                            electrics.map(electric => <div key={electric._id} className="card card-compact w-96 h-96 bg-base-100 shadow-xl">
+                            electrics.map(electric => <div key={electric._id} className="card card-compact max-w-96 h-96 bg-base-100 shadow-xl">
                                 <figure><img className='h-[300px] w-[500px]' src={electric.photo} alt="Shoes" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title text-blue-500">{electric.name}</h2>
@@ -78,7 +78,7 @@ const ShopCategory = () => {
                 <TabPanel>
                 <div className='grid lg:grid-cols-3 gap-4 mt-16'>
                         {
-                            sports.map(sport => <div key={sport._id} className="card card-compact w-96 h-96 bg-base-100 shadow-xl">
+                            sports.map(sport => <div key={sport._id} className="card card-compact max-w-96 h-96 bg-base-100 shadow-xl">
                                 <figure><img className='h-[300px] w-[500px]' src={sport.photo} alt="Shoes" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title text-blue-500">{sport.name}</h2>

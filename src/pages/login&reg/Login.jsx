@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
 
-    const { loginUser } = useContext(AuthContext)
+    const { loginUser, googleLogin } = useContext(AuthContext) ;
+
+
 
 
 
@@ -23,6 +25,17 @@ const Login = () => {
             .catch(err => {
                 console.log(err.message)
             })
+    }
+
+    const handleGoogleLogin =()=>{
+        googleLogin()
+        .then(result => {
+            const user = result.user ;
+            console.log(user)
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 
 
@@ -43,7 +56,7 @@ const Login = () => {
                         <input className='btn text-blue-500' type="submit" value="Login" />
                     </div>
                 </form>
-                <button className="btn mt-5 gap-2">
+                <button onClick={handleGoogleLogin} className="btn mt-5 gap-2">
                    With Google
                     <FaGoogle />
                 </button>
