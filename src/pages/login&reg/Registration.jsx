@@ -10,7 +10,7 @@ const Registration = () => {
     useTitle('Register')
 
     const {createUser} = useContext(AuthContext)
-    const [error, setError]= useState('there is an error')
+    const [error, setError]= useState('')
 
     const handleRegister = (e)=> {
         e.preventDefault()
