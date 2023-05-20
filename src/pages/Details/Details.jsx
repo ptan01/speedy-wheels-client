@@ -1,6 +1,8 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import Rating from 'react-rating';
+import {FaStar,FaRegStar} from 'react-icons/fa'
 
 const Details = () => {
 
@@ -20,7 +22,15 @@ const Details = () => {
                     <p className="py-2"><span className='text-blue-500'>Category</span>:{toy.category}</p>
                     <p className="py-2"><span className='text-blue-500'>Available Quantity</span>:{toy.quantity}</p>
                     <p className="py-2"><span className='text-blue-500'>Seller Name</span>:{toy.sellerName}</p>
-                    <p className="py-2"><span className='text-blue-500'>Rating</span>:{toy.rating}</p>
+                    <p className="py-2"><span className='text-blue-500'>Rating</span>:
+                    <Rating
+                        readonly
+                        placeholderRating={toy.rating}
+                        emptySymbol={<FaRegStar></FaRegStar>}
+                        placeholderSymbol={<FaStar></FaStar>}
+                        fullSymbol={<FaStar></FaStar>}
+                    />
+                    </p>
                     <p className="py-2"><span className='text-blue-500'>About This Toy</span>:{toy.description}</p>
                 </div>
             </div>
