@@ -13,13 +13,13 @@ const LatestBlog = () => {
 
 
     return (
-        <div className='my-20'>
+        <div className='my-32'>
             <div className='my-10'>
-                <h1 className='text-center text-4xl text-blue-600'>Latest Blogs</h1>
+                <h1 className='text-center text-4xl text-blue-600 mb-4'>Latest Blogs</h1>
                 <p className='text-center '>your ultimate source for the latest advancements in car toy technology!  In this blog section, we'll showcase the  newest and most <br /> exciting car toys that are revolutionizing the playtime experience for children.</p>
             </div>
-            <div className='grid grid-cols-3'>
-                <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="200" data-aos-easing="ease-in-out" className="card w-96 bg-base-100 shadow-lg rounded-xl hover:shadow-blue-500/50">
+            <div className='lg:grid grid-cols-3'>
+                <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="200" data-aos-easing="ease-in-out" className="card lg:w-96 bg-base-100 shadow-lg rounded-xl hover:shadow-blue-500/50">
                     <figure className="px-10 pt-10">
                         <img src="https://www.mahardhi.com/prestashop/MT03/kiddle/blog/5-single-default/consectetur-adipiscing.jpg" alt="Shoes" className="rounded-xl w-[500px]" />
                     </figure>
@@ -32,7 +32,7 @@ const LatestBlog = () => {
                         </div>
                     </div>
                 </div>
-                <div data-aos="flip-down" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="200" data-aos-easing="ease-in-out" className="card w-96 bg-base-100 shadow-lg rounded-xl hover:shadow-blue-500/50">
+                <div data-aos="flip-down" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="200" data-aos-easing="ease-in-out" className="card lg:w-96 bg-base-100 shadow-lg rounded-xl hover:shadow-blue-500/50">
                     <figure className="px-10 pt-10">
                         <img src="https://www.mahardhi.com/prestashop/MT03/kiddle/blog/4-single-default/lorem-ipsum-dolo.jpg" alt="Shoes" className="rounded-xl w-[500px]" />
                     </figure>
@@ -45,7 +45,7 @@ const LatestBlog = () => {
                         </div>
                     </div>
                 </div>
-                <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="200" data-aos-easing="ease-in-out" className="card w-96 bg-base-100 shadow-lg rounded-xl hover:shadow-blue-500/50">
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="200" data-aos-easing="ease-in-out" className="card lg:w-96 bg-base-100 shadow-lg rounded-xl hover:shadow-blue-500/50">
                     <figure className="px-10 pt-10">
                         <img src="https://www.mahardhi.com/prestashop/MT03/kiddle/blog/2-single-default/lorem-ipsum-dolor-sit-amet.jpg" alt="Shoes" className="rounded-xl w-[500px]" />
                     </figure>

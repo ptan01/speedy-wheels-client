@@ -4,6 +4,7 @@ import Gallery from '../gallery/Gallery';
 import ShopCategory from '../shopCategory/ShopCategory';
 import LatestBlog from '../latestBlog/LatestBlog';
 import useTitle from '../../../hooks/useTitle';
+import ProductsOverView from '../productsOverView/ProductsOverView';
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
             <Header></Header>
             <Gallery></Gallery>
             <ShopCategory></ShopCategory>
+            <ProductsOverView></ProductsOverView>
             <LatestBlog></LatestBlog>
         </div>
     );
