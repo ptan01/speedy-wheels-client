@@ -18,14 +18,13 @@ const MyToys = () => {
     const handleAscending = (e) => {
         e.preventDefault()
         console.log(e.target.value)
-        if(e.target.value === 'Ascending'){
+        if (e.target.value === 'Ascending') {
             setAscending(1)
         }
-        else if (e.target.value === 'Descending'){
+        else if (e.target.value === 'Descending') {
             setAscending(-1)
         }
     }
-    console.log(ascending)
 
 
 
@@ -36,7 +35,7 @@ const MyToys = () => {
             .then(data => {
                 setUserToys(data)
             })
-    }, [user, depend,ascending])
+    }, [user, depend, ascending])
 
     const handleDelete = (id) => {
 
@@ -76,10 +75,13 @@ const MyToys = () => {
     return (
         <div className='min-h-[80vh]'>
 
-            <select onChange={handleAscending} className="select w-full max-w-xs">
-                <option>Ascending</option>
-                <option>Descending</option>
-            </select>
+            <div>
+                <h2 className='text-blue-600 text-xl'>Sort By Price</h2>
+                <select onChange={handleAscending} className="select w-full max-w-[150px]">
+                    <option>Ascending</option>
+                    <option>Descending</option>
+                </select>
+            </div>
 
 
             <table className="table w-full">
