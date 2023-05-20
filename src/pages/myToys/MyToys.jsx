@@ -11,16 +11,32 @@ const MyToys = () => {
     const { user } = useContext(AuthContext)
 
     const [userToys, setUserToys] = useState([])
-    const [depend , setDepend] = useState(true)
-    
+    const [depend, setDepend] = useState(true)
+    const [ascending, setAscending] = useState(null);
+
+
+    const handleAscending = (e) => {
+        e.preventDefault()
+        console.log(e.target.value)
+        if(e.target.value === 'Ascending'){
+            setAscending(1)
+        }
+        else if (e.target.value === 'Descending'){
+            setAscending(-1)
+        }
+    }
+    console.log(ascending)
+
+
+
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user-toys?email=${user?.email}`)
+        fetch(`http://localhost:5000/user-toys?email=${user?.email}&sort=${ascending}`)
             .then(res => res.json())
             .then(data => {
                 setUserToys(data)
             })
-    }, [user, depend])
+    }, [user, depend,ascending])
 
     const handleDelete = (id) => {
 
@@ -59,6 +75,13 @@ const MyToys = () => {
 
     return (
         <div className='min-h-[80vh]'>
+
+            <select onChange={handleAscending} className="select w-full max-w-xs">
+                <option>Ascending</option>
+                <option>Descending</option>
+            </select>
+
+
             <table className="table w-full">
                 {/* head */}
                 <thead>
