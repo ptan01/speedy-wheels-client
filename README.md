@@ -1,9 +1,9 @@
 ## Speedy Wheels 
 
 * Home page
-    *Home page is responsive
-    *There have shop category
-    *AOS Animation
+    * Home page is responsive
+    * There have shop category
+    * AOS Animation
 * All Toys Page
     * There is All toys
     * And load Data from Backend only 20

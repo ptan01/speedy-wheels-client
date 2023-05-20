@@ -15,7 +15,7 @@ const Edit = () => {
         const quantity = e.target.quantity.value ;
         const description = e.target.description.value ;
         const updatedToy = {price, quantity, description} ;
-        fetch(`http://localhost:5000/toys/update/${toy._id}`,{
+        fetch(`https://speedy-wheels-server.vercel.app/toys/update/${toy._id}`,{
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

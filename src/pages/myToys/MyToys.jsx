@@ -12,7 +12,7 @@ const MyToys = () => {
 
     const [userToys, setUserToys] = useState([])
     const [depend, setDepend] = useState(true)
-    const [ascending, setAscending] = useState(null);
+    const [ascending, setAscending] = useState(1);
 
 
     const handleAscending = (e) => {
@@ -30,7 +30,7 @@ const MyToys = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user-toys?email=${user?.email}&sort=${ascending}`)
+        fetch(`https://speedy-wheels-server.vercel.app/user-toys?email=${user?.email}&sort=${ascending}`)
             .then(res => res.json())
             .then(data => {
                 setUserToys(data)
@@ -49,7 +49,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/toys/delete/${id}`, {
+                fetch(`https://speedy-wheels-server.vercel.app/toys/delete/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

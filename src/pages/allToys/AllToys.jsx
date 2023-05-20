@@ -12,7 +12,7 @@ const AllToys = () => {
     const handleSearch = (event)=> {
         event.preventDefault()
         const text = event.target.text.value
-        fetch(`http://localhost:5000/toys/${text}`)
+        fetch(`https://speedy-wheels-server.vercel.app/toys/${text}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)

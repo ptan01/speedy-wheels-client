@@ -11,15 +11,15 @@ const ShopCategory = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/category/off-road')
+        fetch('https://speedy-wheels-server.vercel.app/category/off-road')
             .then(res => res.json())
             .then(data => setOfRoads(data))
 
-        fetch('http://localhost:5000/category/electric')
+        fetch('https://speedy-wheels-server.vercel.app/category/electric')
             .then(res => res.json())
             .then(data => setElectrics(data))
 
-        fetch('http://localhost:5000/category/sports')
+        fetch('https://speedy-wheels-server.vercel.app/category/sports')
             .then(res => res.json())
             .then(data => setSports(data))
     }, [])
