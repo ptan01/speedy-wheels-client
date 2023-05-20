@@ -1,11 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
-import { FaBeer, FaGoogle, FaGithub } from 'react-icons/fa';
+import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+    useTitle('Login')
 
     const { loginUser, googleLogin } = useContext(AuthContext) ;
+    const [error , setError] = useState('')
+  
 
     const location = useLocation()
 
@@ -22,11 +26,11 @@ const Login = () => {
         loginUser(email, pass)
             .then(result => {
                 const user = result.user;
-                console.log(user)
                 navigate(from , {replace: true})
             })
             .catch(err => {
                 console.log(err.message)
+                setError(err.message)
             })
     }
 
@@ -34,11 +38,11 @@ const Login = () => {
         googleLogin()
         .then(result => {
             const user = result.user ;
-            console.log(user)
             navigate(from, {replace : true})
         })
         .catch(err => {
             console.log(err)
+            setError(err.message)
         })
     }
 
@@ -64,6 +68,7 @@ const Login = () => {
                    With Google
                     <FaGoogle />
                 </button>
+                <p className='text-red-600'>{error}</p>
                 <p>Don't have account ? <Link className='text-blue-500' to='/registration'>Register</Link></p>
             </div>
         </div>

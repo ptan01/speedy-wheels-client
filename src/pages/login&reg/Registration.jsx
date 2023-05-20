@@ -1,11 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const Registration = () => {
 
+
+    useTitle('Register')
+
     const {createUser} = useContext(AuthContext)
+    const [error, setError]= useState('there is an error')
 
     const handleRegister = (e)=> {
         e.preventDefault()
@@ -24,11 +29,13 @@ const Registration = () => {
             })
             .catch(err=> {
                 console.log(err.message)
+                setError(err.message)
             })
             console.log(user)
         })
         .catch(err => {
             console.log(err.message)
+            setError(err.message)
         })
     }
 
@@ -60,6 +67,7 @@ const Registration = () => {
                     <input className='btn text-blue-500' type="submit" value="Register" />
                 </div>
             </form>
+            <p className='text-center text-red-600'>{error}</p>
             <p className='text-center'>Already Have An Account ? <Link className='text-blue-500' to='/login'>Login</Link></p>
         </div>
     );

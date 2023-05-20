@@ -10,6 +10,7 @@ import Details from "../pages/Details/Details";
 import Edit from "../pages/edit/Edit";
 import PrivetRoute from "./PrivetRoute";
 import Erorr from "../pages/error/Erorr";
+import Blogs from "../pages/blogs/Blogs";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
                 path: 'edit/:id',
                 element: <Edit></Edit>,
                 loader: ({params})=> fetch(`http://localhost:5000/single-toys/${params.id}`)
+            },
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
             }
         ]
     }

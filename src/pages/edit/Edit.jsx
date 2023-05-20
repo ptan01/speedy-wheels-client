@@ -1,10 +1,13 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const Edit = () => {
 
     const toy = useLoaderData()
+
+    useTitle('Edit')
 
     const handleUpdate =(e)=> {
         e.preventDefault()
